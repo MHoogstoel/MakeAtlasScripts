@@ -41,14 +41,14 @@ set( TRANSFORM_SUFFIX '' )
 set( INITIAL_TRANS_SUFFIX '' )
 ##-15-Template file name
 set( TEMPLATE_FILE template.mha )
-##-16-Bias correction
-set( BIAS TRUE )
+##-16-Bias correction ##
+set( BIAS FALSE )
 ##-17-directory in which temporary files are written
 set( tempDir ${dir}/${OUTPUT_PRE_SUBDIR}/temp-reg-testing )
 ##-18-If the transform given above was computed with image spacing set to 1,1,1 and centered, set to TRUE (Not used for scalar images)
 set( SCALE FALSE )
-##-19-Skullstrip the image using a simple intensity based algorithm
-set( SKULLSTRIP FALSE )
+##-19-Skullstrip the image using a simple intensity based algorithm ##
+set( SKULLSTRIP TRUE )
 ###################################
 include( /home/hoogstoe/Scripts/local-scripts/MakeAtlasScripts/GlobalConfig.bms )
 ##Processes

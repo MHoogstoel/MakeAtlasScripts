@@ -12,6 +12,8 @@ set( ScriptName config_test_atlas.bms )
 ##dir/case/case_suffix;dir=/rodent/Project/subProject1
 ##-2-SubProject root directory
 set( dir /rodent/crews_rodent/NADIA/LiveVSFixedStudy/live/P28/ )
+##-2b-Output directory
+set( OutDir /home/hoogstoe/Scripts/Data/ )
 ##-3-Cases to process
 set( CASES 20110110_crews_1 20110110_crews_2 )
 ##-4-Input suffix of files used to create new atlas
@@ -19,7 +21,7 @@ set( ATLAS_INPUT_SUFFIX _reg.nrrd )
 ##-5-Atlas subdirectory for brain stripping and parcellation
 set( ATLAS_SUB_DIR template/a-original )
 ##-6-Population atlas directories suffix
-set( AtlasDirectoriesSuffix MarionTestingScripts )
+set( AtlasDirectoriesSuffix MarionTestingHerOwnScripts )
 ###################################
 #Extra parameters. Normally no need to modified
 ###################################
@@ -34,7 +36,7 @@ set( DTI_SUFFIX '' )
 ##-8-If set to '', not used. Set DTI_SUFFIX accordingly (Not used for scalar images)
 set( TRANSFORM_SUFFIX '' )
 ##-12-Directory in which the computed population atlas and its parcellation/segmentation are saved
-set( outputDir ${dir}/${OUTPUT_PRE_SUBDIR}/Atlas-${AtlasDirectoriesSuffix} )
+set( outputDir ${OutDir}/Atlas-${AtlasDirectoriesSuffix} )
 ##-13-Subdirectory in the case directory in which to save new case files (hfields/invhfields)
 set( PROCESS_SUBDIR 4-AtlasCreation-${AtlasDirectoriesSuffix} )
 ##-14-Directory in which temporary files are written
@@ -54,10 +56,10 @@ set( IMAGE_GRID ImageGrid.nrrd )
 ##-20-Suffix of the mask created from the segmentation
 set( NEW_MASK_TAG _mask.nrrd )
 ##-22-Median Filter images before atlas creation
-set( Mradius 0 )
+set( Mradius 2 )
 ##-23-Step at which to start the processing (only use if script stopped in the middle of the execution for no real reason)
-set( step 0 )
+set( step 35 )
 ###################################
 include( /home/hoogstoe/Scripts/local-scripts/MakeAtlasScripts/GlobalConfig.bms )
 ##Processes
-include( /home/hoogstoe/Scripts/local-scripts/MakeAtlasScripts/Atlas/000MakeAtlas.bms )
+include( /home/hoogstoe/Scripts/local-scripts-Marion/MakeAtlasScripts/Atlas/000MakeAtlas.bms )
